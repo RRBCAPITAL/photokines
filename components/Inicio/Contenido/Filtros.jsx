@@ -199,7 +199,7 @@ const Filtros = ({
             <select
             value={active} // Asumiendo que 'active' es el valor seleccionado
             onChange={handleCategoriaChange}
-            className="flex lg:h-[46px] bg-transparent text-black text- outline-none w-fit flex-col sm:flex-row gap-2 sm:gap-4 lg:mx-0 lg:px-[1.5rem] overflow-hidden"
+            className="flex lg:h-[46px] bg-transparent text-black dark:text-white outline-none w-fit flex-col sm:flex-row gap-2 sm:gap-4 lg:mx-0 lg:px-[1.5rem] overflow-hidden"
           >
             <option value="">Listado de categorías</option>
             {categorias.map((i, index) => (

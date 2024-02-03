@@ -220,7 +220,7 @@ const Cards = ({
       <ToastContainer autoClose={5000} theme="colored" newestOnTop={true} />
 
       <div className="w-[96%] sm:w-[70%]">
-      <h1 className="text-[22px] font-bold ml-2 lg:ml-0 text-[#565656]">{textSearch ? `Resultados en ${textSearch}` : active === 'Kinesiólogas' ? 'Kinesiólogas en Perú' : active === 'Masajes' ? 'Mujeres para Masajes eróticos en Perú' : active === 'Videollamada hot' ? 'Mujeres para Videollamadas y Sexting en Perú' : active}</h1>
+      <h1 className="text-[22px] font-bold ml-2 lg:ml-0 text-[#565656] dark:text-[#d3d3d3]">{textSearch ? `Resultados en ${textSearch}` : active === 'Kinesiólogas' ? 'Kinesiólogas en Perú' : active === 'Masajes' ? 'Mujeres para Masajes eróticos en Perú' : active === 'Videollamada hot' ? 'Mujeres para Videollamadas y Sexting en Perú' : active}</h1>
       </div>
 
       <Masonry

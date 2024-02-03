@@ -176,20 +176,20 @@ const Details = ({ id }) => {
                   <h1 className=" text-4xl font-extrabold">{anuncio?.name}</h1>
 
                   <div className="text-[12px] sm:text-sm grid grid-cols-3 text-slate-700 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-none overflow-hidden 2xl:flex gap-2">
-                    <h2 className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center">
+                    <h2 className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center">
                       {anuncio?.nacionalidad}
                     </h2>
-                    <h2 className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center">
+                    <h2 className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center">
                       {anuncio?.edad} años
                     </h2>
-                    <h2 className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center">
+                    <h2 className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center">
                       {anuncio?.altura} cm
                     </h2>
-                    <h2 className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center">
+                    <h2 className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center">
                       {anuncio?.peso} kg
                     </h2>
                     {/* <h2 className='rounded-[10px] bg-back-red my-auto px-2 py-1 text-center'>Idioma: <nav className='inline-block'>{" "}{idioma?.join(", ") || ""}</nav></h2> */}
-                    <h2 className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center">
+                    <h2 className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center">
                       ID: {anuncio?.idFrontend}
                     </h2>
                   </div>
@@ -305,7 +305,7 @@ const Details = ({ id }) => {
                       lugarEncuentro.includes(c) ? (
                         <h2
                           key={index}
-                          className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center"
+                          className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center"
                         >
                           {c}
                         </h2>
@@ -331,7 +331,7 @@ const Details = ({ id }) => {
                       servicios.includes(c) ? (
                         <h2
                           key={index}
-                          className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center"
+                          className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center"
                         >
                           {c}
                         </h2>
@@ -357,7 +357,7 @@ const Details = ({ id }) => {
                       serviciosExclusivos.includes(c) ? (
                         <h2
                           key={index}
-                          className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center"
+                          className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center"
                         >
                           {c}
                         </h2>

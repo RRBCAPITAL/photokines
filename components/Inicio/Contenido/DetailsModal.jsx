@@ -118,7 +118,7 @@ const DetailsModal = ({ id, setDetailsModal }) => {
 
   return (
     <div
-      className="z-[1000] flex fixed max-h-screen w-screen bg-black/60 overflow-y-auto"
+      className="z-[1000] flex fixed max-h-screen w-screen bg-black/40 overflow-y-auto"
       onClick={(e) => {
         setDetailsModal({
           status: false,
@@ -129,7 +129,7 @@ const DetailsModal = ({ id, setDetailsModal }) => {
     >
       <contain
         onClick={(e) => e.stopPropagation()}
-        className="z-[1001] flex flex-col gap-2 w-full lg:w-[75%] 2xl:w-[1000px] max-h-screen overflow-y-auto p-2 lg:p-4 dark:bg-dark-d mx-auto bg-[#ececec] shadow-2xl "
+        className="z-[1001] flex flex-col gap-2 w-full lg:w-[75%] 2xl:w-[1000px] max-h-screen overflow-y-auto p-2 lg:p-4 dark:bg-[#1c1b1b] mx-auto bg-[#ececec] shadow-2xl "
       >
         <button
           onClick={() => {
@@ -191,7 +191,7 @@ const DetailsModal = ({ id, setDetailsModal }) => {
             </div>
           </div>
 
-          <detalles className="flex flex-col gap-6 bg-white p-6">
+          <detalles className="flex flex-col gap-6 bg-white dark:bg-[#2b2b2b] p-6">
             <info className="flex flex-col gap-4">
               <infodetails className="flex flex-col gap-2 text-slate-700 dark:text-white">
                 <h1 className=" text-4xl font-extrabold">{anuncio?.name}</h1>
@@ -376,7 +376,7 @@ const DetailsModal = ({ id, setDetailsModal }) => {
                     serviciosExclusivos.includes(c) ? (
                       <h2
                         key={index}
-                        className="rounded-[10px] bg-back-orange my-auto px-2 py-1 text-center"
+                        className="rounded-[10px] bg-[#def2fc] my-auto px-2 py-1 text-center"
                       >
                         {c}
                       </h2>
