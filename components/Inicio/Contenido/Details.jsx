@@ -3,8 +3,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import GaleriaIMG from "./GaleriaIMG/GaleriaIMG";
-import GaleriaVIDEO from "./GaleriaVIDEO/GaleriaVIDEO";
 import Link from "next/link";
 import { conversorDeHora12 } from "./conversorDeHora12";
 
@@ -418,7 +416,7 @@ const Details = ({ id }) => {
                 )}
               </div>
 
-              {galeriaVIDEO?.length > 0 && (
+              {/* {galeriaVIDEO?.length > 0 && (
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={0}
@@ -456,7 +454,7 @@ const Details = ({ id }) => {
                       </SwiperSlide>
                     ))}
                 </Swiper>
-              )}
+              )} */}
             </detalles>
           </div>
         </contain>

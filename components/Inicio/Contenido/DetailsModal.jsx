@@ -16,12 +16,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "./GaleriaVIDEO/styles.css";
+// import "./GaleriaVIDEO/styles.css";
 
 import { FaExpand } from "react-icons/fa";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+// import { Pagination, Navigation } from "swiper/modules";
 
 import { lugarEncuentro, servicios, serviciosExclusivos } from "@/Data/data";
 
@@ -438,7 +438,7 @@ const DetailsModal = ({ id, setDetailsModal }) => {
               )}
             </div>
 
-            {galeriaVIDEO?.length > 0 && (
+            {/* {galeriaVIDEO?.length > 0 && (
               <Swiper
                 slidesPerView={1}
                 spaceBetween={0}
@@ -476,7 +476,7 @@ const DetailsModal = ({ id, setDetailsModal }) => {
                     </SwiperSlide>
                   ))}
               </Swiper>
-            )}
+            )} */}
           </detalles>
         </div>
       </contain>
