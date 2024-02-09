@@ -76,14 +76,6 @@ export default function RootLayout({ children }) {
       >
         <html lang="es" className={quicksand.className}>
           <body className="w-screen overflow-x-hidden">
-            <Head>
-              <title>Canonical url</title>
-              <link
-                rel="canonical"
-                href="https://photokinnes.com/"
-                key="canonical"
-              />
-            </Head>
             <GoogleAnalytics />
             <Suspense fallback={<Loading />}>
               <Access children={children} />
