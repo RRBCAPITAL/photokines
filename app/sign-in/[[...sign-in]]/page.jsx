@@ -3,6 +3,7 @@
 import { SignIn } from "@clerk/nextjs";
 import { useEffect } from "react";
 import { Poppins } from "next/font/google";
+import Head from 'next/head'
 
 const quick = Poppins({ subsets: ['latin'], weight: ["400", "600"] })
 
@@ -14,6 +15,9 @@ export default function Page() {
   
   return (
     <div className={quick.className}>
+      <Head>
+        <title>Iniciar Sesión a Kinestop</title>
+      </Head>
       <div className="w-screen min-h-screen overflow-hidden flex flex-col items-center bg-back-light relative">
       <div className="z-10 mt-20 m-4 bg-[#0000003e] shadow-sm p-[2px] rounded-[20px] relative">
         

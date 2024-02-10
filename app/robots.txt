@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://papayahub.pe/sitemap.xml
+Sitemap: https://photokinnes.com/sitemap.xml

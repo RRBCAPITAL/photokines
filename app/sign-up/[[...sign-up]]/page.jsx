@@ -1,44 +1,23 @@
-// "use client"
-
-// import { SignUp } from "@clerk/nextjs";
-// import { useEffect } from "react";
-
-// export default function Page() {
-
-//   return (
-//     <containtotal className="w-screen flex flex-col min-h-screen items-center bg-back-light">
-//     <containparcial className='z-10 mt-20 relative m-4 sm:bg-[#0000003e] p-[2px] rounded-[20px]'>
-//     <section className="m-4 p-4 rounded-[20px]">
-//       {/* <textcontain className='hidden sm:block'>
-//       <h1 className="text-white text-3xl text-center font-bold">Únete a <strong className="">Papaya</strong> Hub</h1>
-//       <h6 className="text-white text-md text-center mb-4">y disfruta de los beneficios que tenemos para ti.</h6>
-//       </textcontain> */}
-//     <containerdata className='flex flex-col sm:flex-row gap-2'>
-
-//       <SignUp/>
-
-    
-//     </containerdata>
-//     </section>
-//     </containparcial>
-
-//     <img
-//         src="/assets/bannerfulla.jpg"
-//         alt=""
-//         className="fixed z-0 top-0 left-0 w-screen h-screen object-cover"
-//       />
-//   </containtotal>
-//     )
-// }
-
-
-"use client"
-
 import { SignUp } from "@clerk/nextjs";
-import { useEffect } from "react";
 import { Poppins } from "next/font/google";
 
 const quick = Poppins({ subsets: ['latin'], weight: ["400", "600"] })
+
+export const metadata = {
+  title: "Registrarse a Photokinnes - Kinesiólogas y putas en Peru",
+  description:
+    "Registrate a Photokinnes y publica tu anuncio totalmente gratis.",
+  referrer: 'origin-when-cross-origin',
+  metadataBase: new URL(
+    "https://photokinnes.com/sign-up" ||
+      "https://www.photokinnes.com/sign-up"
+  ),
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "RRB CAPITAL" }],
+  publisher: 'RRB CAPITAL',
+};
 
 export default function Page() {
 
