@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         }}
         localization={esES}
       >
-        <html lang="es" className={quicksand.className}>
+        {/* <html lang="es" className={quicksand.className}>
           <body className="w-screen overflow-x-hidden">
             <GoogleAnalytics />
             <Suspense fallback={<Loading />}>
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
             </Suspense>
             <Analytics />
           </body>
-        </html>
+        </html> */}
       </ClerkProvider>
     </>
   );
