@@ -20,6 +20,8 @@ import "swiper/css/navigation";
 
 import { FaExpand } from "react-icons/fa";
 
+import { anuncios } from "@/Data/dataAnuncios";
+
 // import required modules
 // import { Pagination, Navigation } from "swiper/modules";
 
@@ -84,33 +86,34 @@ const DetailsModal = ({ id, setDetailsModal }) => {
   );
 
   useEffect(() => {
-    const data = localStorage.getItem("anuncioStorage");
-    const Anuncios = JSON.parse(data);
-    const anuncioFound = Anuncios?.find((a) => a?.id === id);
-    if (anuncioFound) {
-      setAnuncio(anuncioFound);
-    } else {
-      axios
-        .get(`/api/anuncio/${id}`)
-        .then((res) => setAnuncio(res.data))
-        .catch((err) => console.log(err));
-    }
+    // const data = localStorage.getItem("anuncioStorage");
+    // const Anuncios = JSON.parse(data);
+    // const anuncioFound = Anuncios?.find((a) => a?.id === id);
+    // if (anuncioFound) {
+    //   setAnuncio(anuncioFound);
+    // } else {
+    //   axios
+    //     .get(`/api/anuncio/${id}`)
+    //     .then((res) => setAnuncio(res.data))
+    //     .catch((err) => console.log(err));
+    // }
+
+    const anuncioFound = anuncios?.find((a) => a?.id === id);
+    setAnuncio(anuncioFound);
   }, []);
 
-  useEffect(() => {
-    if (anuncio?.tarifaPresencial) {
-      const tarifaPresencial = JSON.parse(anuncio?.tarifaPresencial);
-      setTarifaPresencial(tarifaPresencial);
-    }
-    if (anuncio?.tarifaVirtual) {
-      const tarifaVirtual = JSON.parse(anuncio?.tarifaVirtual);
-      setTarifaVirtual(tarifaVirtual);
-    }
-  }, [anuncio?.tarifaVirtual, anuncio?.tarifaPresencial]);
+  // useEffect(() => {
+  //   if (anuncio?.tarifaPresencial) {
+  //     const tarifaPresencial = JSON.parse(anuncio?.tarifaPresencial);
+  //     setTarifaPresencial(tarifaPresencial);
+  //   }
+  //   if (anuncio?.tarifaVirtual) {
+  //     const tarifaVirtual = JSON.parse(anuncio?.tarifaVirtual);
+  //     setTarifaVirtual(tarifaVirtual);
+  //   }
+  // }, [anuncio?.tarifaVirtual, anuncio?.tarifaPresencial]);
 
   const numeroTelefono = anuncio?.whatsapp;
-
-  const galeriaVIDEO = anuncio?.galeriaVideos;
 
   const handleLlamarClick = () => {
     window.location.href = `tel:${numeroTelefono}`;

@@ -30,16 +30,16 @@ const Card = ({
     setIsHovered(!isHovered);
   };
 
-  useEffect(() => {
-    if (anuncioTarifaPresencial) {
-      const tarifaPresencial = JSON.parse(anuncioTarifaPresencial);
-      setTarifaPresencial(tarifaPresencial);
-    }
-    if (anuncioTarifaVirtual) {
-      const tarifaVirtual = JSON.parse(anuncioTarifaVirtual);
-      setTarifaVirtual(tarifaVirtual);
-    }
-  }, [anuncioTarifaVirtual, anuncioTarifaPresencial]);
+  // useEffect(() => {
+  //   if (anuncioTarifaPresencial) {
+  //     const tarifaPresencial = JSON.parse(anuncioTarifaPresencial);
+  //     setTarifaPresencial(tarifaPresencial);
+  //   }
+  //   if (anuncioTarifaVirtual) {
+  //     const tarifaVirtual = JSON.parse(anuncioTarifaVirtual);
+  //     setTarifaVirtual(tarifaVirtual);
+  //   }
+  // }, [anuncioTarifaVirtual, anuncioTarifaPresencial]);
 
   return (
     <div

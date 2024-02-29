@@ -18,51 +18,47 @@ const Access = ({ children }) => {
   // const { user, currentUser} = useCurrentUser()
   const user = useUser()
   const [ userData, setUserData ] = useState(null)
-  const [updatedAnuncio, setUpdatedAnuncio] = useState(false);
 
-  const userCreate = {
-    clerkId: user?.user?.id || '', // Usar un valor predeterminado si 'user' o 'user.user' es nulo
-    firstname: user?.user?.firstName || '',
-    username: user?.user?.username || "",
-    phone: user?.user?.phoneNumbers[0]?.phoneNumber || "",
-    // lastname: user?.user?.lastName || '',
-    fullname: user?.user?.fullName || '',
-    email: user?.user?.emailAddresses[0]?.emailAddress || '',
-    image: user?.user?.imageUrl || '',
-  };
-  
-  console.log(userCreate.image);
+  // const userCreate = {
+  //   clerkId: user?.user?.id || '', // Usar un valor predeterminado si 'user' o 'user.user' es nulo
+  //   firstname: user?.user?.firstName || '',
+  //   username: user?.user?.username || "",
+  //   phone: user?.user?.phoneNumbers[0]?.phoneNumber || "",
+  //   // lastname: user?.user?.lastName || '',
+  //   fullname: user?.user?.fullName || '',
+  //   email: user?.user?.emailAddresses[0]?.emailAddress || '',
+  //   image: user?.user?.imageUrl || '',
+  // };
 
-    useEffect(() => {
-      const storedUser = localStorage.getItem("storedUser");
-      if(user && !userData && !storedUser){
-        console.log("entre aqui");
-        // El usuario no está almacenado localmente, así que guárdalo en la base de datos
-        fetch("/api/user", {
-          method: "POST",
-          body: JSON.stringify(userCreate),
-          headers: { "Content-type": "application/json; charset=UTF-8" },
-        })
-          .then((data) => data.json())
-          .then((res) => {
-            console.log(res);
-            // Almacena el usuario en el almacenamiento local
-            setUserData(res.user)
-            localStorage.setItem("storedUser", JSON.stringify(res.user));
-          })
-          .catch((error) => console.log("Hubo un error: ", error.message));
-      }
-      const parsedUser = JSON.parse(storedUser) 
+    // useEffect(() => {
+    //   const storedUser = localStorage.getItem("storedUser");
+    //   if(user && !userData && !storedUser){
+    //     console.log("entre aqui");
+    //     // El usuario no está almacenado localmente, así que guárdalo en la base de datos
+    //     fetch("/api/user", {
+    //       method: "POST",
+    //       body: JSON.stringify(userCreate),
+    //       headers: { "Content-type": "application/json; charset=UTF-8" },
+    //     })
+    //       .then((data) => data.json())
+    //       .then((res) => {
+    //         console.log(res);
+    //         // Almacena el usuario en el almacenamiento local
+    //         setUserData(res.user)
+    //         localStorage.setItem("storedUser", JSON.stringify(res.user));
+    //       })
+    //       .catch((error) => console.log("Hubo un error: ", error.message));
+    //   }
+    //   const parsedUser = JSON.parse(storedUser) 
 
-       if(!userData){
+    //    if(!userData){
         
-        setUserData(parsedUser)
-       }
+    //     setUserData(parsedUser)
+    //    }
       
-      console.log("estoy aqui");
-    }, [user, userData]);
+    //   console.log("estoy aqui");
+    // }, [user, userData]);
 
-    console.log(userData);
 
   return (
     <>
@@ -78,8 +74,7 @@ const Access = ({ children }) => {
       pathname === '/dashboard/cositas'
         ? ""
         : <>
-        {/* <BannerAnuncios /> */}
-        <Navbar currentUserR={userData}/>
+        <Navbar />
         </>
         }
       {children}

@@ -13,6 +13,8 @@ import "./stylecards.css";
 import { changeNabvar } from "@/components/NavBar/Navbar";
 import Details from "./Details";
 
+import { anuncios } from "@/Data/dataAnuncios";
+
 const Cards = ({
   categoria,
   active,
@@ -27,57 +29,57 @@ const Cards = ({
   selectedIdioma,
   setDetailsModal
 }) => {
-  const [anuncios, setAnuncios] = useState();
+  // const [anuncios, setAnuncios] = useState();
   const [filteredAnuncios, setFilteredAnuncios] = useState([]);
   const [updatedAnuncio, setUpdatedAnuncio] = useState(false);
   const [listen, setListen] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setListen(!listen);
-      localStorage.removeItem("anuncioStorage");
-      localStorage.removeItem("videoStorage");
-      fetch("/api/anuncio")
-        .then((data) => data.json())
-        .then(({ data }) => {
-          setAnuncios(data);
-          localStorage.setItem("anuncioStorage", JSON.stringify(data));
-          localStorage.removeItem("updatedAnuncio");
-        });
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setListen(!listen);
+  //     localStorage.removeItem("anuncioStorage");
+  //     localStorage.removeItem("videoStorage");
+  //     fetch("/api/anuncio")
+  //       .then((data) => data.json())
+  //       .then(({ data }) => {
+  //         setAnuncios(data);
+  //         localStorage.setItem("anuncioStorage", JSON.stringify(data));
+  //         localStorage.removeItem("updatedAnuncio");
+  //       });
 
-    }, 60000);
-  }, [listen]);
+  //   }, 60000);
+  // }, [listen]);
 
-  useEffect(() => {
-    const anuncioStorage = localStorage.getItem("anuncioStorage");
-    const LocalUpdatedAnuncio = localStorage.getItem("updatedAnuncio");
-    const parsedUpdatedAnuncio = JSON.parse(LocalUpdatedAnuncio);
+  // useEffect(() => {
+  //   const anuncioStorage = localStorage.getItem("anuncioStorage");
+  //   const LocalUpdatedAnuncio = localStorage.getItem("updatedAnuncio");
+  //   const parsedUpdatedAnuncio = JSON.parse(LocalUpdatedAnuncio);
 
-    if (parsedUpdatedAnuncio !== updatedAnuncio) {
-      setUpdatedAnuncio(parsedUpdatedAnuncio);
-    }
+  //   if (parsedUpdatedAnuncio !== updatedAnuncio) {
+  //     setUpdatedAnuncio(parsedUpdatedAnuncio);
+  //   }
 
-    if (!anuncioStorage || updatedAnuncio) {
-      fetch("/api/anuncio")
-        .then((data) => data.json())
-        .then(({ data }) => {
-          setAnuncios(data);
-          localStorage.setItem("anuncioStorage", JSON.stringify(data));
-          localStorage.removeItem("updatedAnuncio");
-        });
-    }
+  //   if (!anuncioStorage || updatedAnuncio) {
+  //     fetch("/api/anuncio")
+  //       .then((data) => data.json())
+  //       .then(({ data }) => {
+  //         setAnuncios(data);
+  //         localStorage.setItem("anuncioStorage", JSON.stringify(data));
+  //         localStorage.removeItem("updatedAnuncio");
+  //       });
+  //   }
 
-    if (!anuncios) {
-      const anunciosS = JSON.parse(anuncioStorage);
-      setAnuncios(anunciosS);
-    }
-  }, [updatedAnuncio]);
+  //   if (!anuncios) {
+  //     const anunciosS = JSON.parse(anuncioStorage);
+  //     setAnuncios(anunciosS);
+  //   }
+  // }, [updatedAnuncio]);
 
-  useEffect(() => {
-    window.addEventListener("beforeunload", () => {
-      localStorage.removeItem("anuncioStorage");
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("beforeunload", () => {
+  //     localStorage.removeItem("anuncioStorage");
+  //   });
+  // }, []);
 
   useEffect(() => {
     const anunciosSegunNivel = anuncios?.sort((a, b) => {
